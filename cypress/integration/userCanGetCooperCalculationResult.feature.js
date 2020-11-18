@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe("Cooper Client calculates successfully", () => {
-  it("calcutates cooper performance", () => {
+  it("calculates cooper performance", () => {
     cy.visit("/");
     cy.get("input#distance").type("1000");
     cy.get("select#gender").select("female");

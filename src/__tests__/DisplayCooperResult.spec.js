@@ -7,16 +7,16 @@ describe("<DisplayCooperResult />", () => {
   describe("evaluates the correct result for female/poor", () => {
     beforeAll(() => {
       describedComponent = shallow(
-        <DisplayCooperResult distance="1400" gender="female" age="23" />
+        <DisplayCooperResult distance="1000" gender="female" age="23" />
       );
     });
 
-    it("and returns the data user put in", () => {
+    it("and returns the assessment", () => {
       expect(describedComponent.find("p#cooper-result").text()).toEqual("Result: Poor");
     });
 
     it("and returns the data user put in", () => {
-      expect(describedComponent.find("p#cooper-message").text()).toEqual("23 year old female running 1400 meters.");
+      expect(describedComponent.find("p#cooper-message").text()).toEqual("23 year old female running 1000 meters.");
     });
   });
 
@@ -26,7 +26,7 @@ describe("<DisplayCooperResult />", () => {
         <DisplayCooperResult distance="2000" gender="female" age="23" />
       );
     });
-    it("and returns the data user put in", () => {
+    it("and returns the assessment", () => {
       expect(describedComponent.find("p#cooper-result").text()).toEqual("Result: Average");
     });
 
