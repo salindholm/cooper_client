@@ -1,10 +1,24 @@
 import React from 'react';
+import cooperCalculator from "../modules/cooperCalculator";
 
-const DisplayCooperResult = props => {
+const DisplayCooperResult = ({ distance, gender, age }) => {
+  const calculate = () => {
+    return cooperCalculator(distance, gender, age);
+  };
+
+  const propsPassed = distance && age ? true : false;
+
   return (
-    <div>
-      
-    </div>
+    <>
+      {propsPassed && (
+        <>
+          <p id="cooper-message">
+            {age} year old {gender} running {distance} meters.
+          </p>
+          <p id="cooper-result">Result: {calculate()}</p>
+        </>
+      )}
+    </>
   )
 }
 
