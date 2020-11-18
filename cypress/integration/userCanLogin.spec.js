@@ -8,7 +8,7 @@ describe("User authenticates", () => {
   it("successfully with credentials", () => {
     cy.get("#login").click();
     cy.get("#login-form").within(() => {
-      cy.get("#email").type("user@email.com");
+      cy.get("#email").type("example@mail.com");
       cy.get("#password").type("password");
       cy.get('button').contains('Submit').click()
     });
@@ -18,7 +18,7 @@ describe("User authenticates", () => {
   it("unsuccessfully with invalid credentials", () => {
     cy.get("#login").click();
     cy.get("#login-form").within(() => {
-      cy.get("#email").type("user@mail.com");
+      cy.get("#email").type("example@mail.com");
       cy.get("#password").type("wrongpassword");
       cy.get('button').contains('Submit').click()
     });
