@@ -1,6 +1,6 @@
 import React from 'react';
 import cooperCalculator from "../modules/cooperCalculator";
-import saveData from "../modules/performanceData";
+import { saveData } from "../modules/performanceData";
 
 const DisplayCooperResult = ({
   distance,
