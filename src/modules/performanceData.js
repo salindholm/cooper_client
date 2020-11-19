@@ -9,7 +9,6 @@ const saveData = async (result, entryHandler) => {
     "Accept": "application/json"
   };
   try {
-    //debugger
     await axios.post("/performance_data",
       {
         performance_data: { data: { message: result } }
