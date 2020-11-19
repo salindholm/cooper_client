@@ -1,4 +1,4 @@
-describe('User attempts to view their performance data', () => {
+describe('User attempts to view his/her performance data', () => {
   before(function() {
     cy.server();
     cy.route({

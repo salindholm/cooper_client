@@ -38,6 +38,7 @@ class App extends Component {
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
     let renderLogin;
+    let performanceDataIndex;
     switch(true) {
       case renderLoginForm && !authenticated:
         renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
@@ -60,20 +61,20 @@ class App extends Component {
         <p id="login-success">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
       );
       if (this.state.renderIndex) {
-       performanceDataIndex = (
-        <>
-          <DisplayPerformanceData
-          updateIndex={this.state.updateIndex}
-          indexUpdated={() => this.setState({ updateIndex: false })}
-         />
-         <button onClick={() => this.setState({ renderIndex: false })}>Hide Past Entries</button>
-        </>
-      )
-    } else {
-      performanceDataIndex = (
-        <button id="show-index" onClick={() => this.setState({ renderIndex: true})}
-        >Show Past Entries</button>
-      )
+        performanceDataIndex = (
+          <>
+            <DisplayPerformanceData
+              updateIndex={this.state.updateIndex}
+              indexUpdated={() => this.setState({ updateIndex: false })}
+            />
+            <button onClick={() => this.setState({ renderIndex: false })}>Hide past entries</button>
+          </>
+        ) 
+        
+      } else {
+        performanceDataIndex = (
+          <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
+        )
       }
     }
 
