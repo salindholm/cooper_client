@@ -21,7 +21,7 @@ const DisplayCooperResult = ({
           <p id="cooper-message">
             {age} year old {gender} running {distance} meters.
           </p>
-          <p id="cooper-result">Result: {calculate()}</p>
+          <p id="cooper-result">Result: {result}</p>
           {authenticated && !entrySaved ? (
             <button
             id="save-result"

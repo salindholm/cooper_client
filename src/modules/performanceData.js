@@ -9,7 +9,7 @@ const saveData = async (result, entryHandler) => {
     Accept: "application/json"
   };
   try {
-    await axios.post("/performance_data",
+    await axios.post("http://localhost:3000/api/v1/performance_data",
       {
         performance_data: { data: { message: result } }
       }, {
