@@ -18,6 +18,21 @@ class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+
+  onLogin = async e => {
+    debugger 
+   e.preventDefault();
+   const response = await authenticate(
+     e.target.email.value,
+     e.target.password.value
+   );
+   if (response.authenticated) {
+     this.setState({ authenticated: true });
+   } else {
+     this.setState({ message: response.message, renderLoginForm: false });
+   }
+  };
+
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
     let renderLogin;
@@ -57,18 +72,7 @@ class App extends Component {
       </>
     );
   }
-  onLogin = async e => {
-   e.preventDefault();
-   const response = await authenticate(
-     e.target.email.value,
-     e.target.password.value
-   );
-   if (response.authenticated) {
-     this.setState({ authenticated: true });
-   } else {
-     this.setState({ message: response.message, renderLoginForm: false });
-   }
-  }
+  
 }
 
 export default App;
