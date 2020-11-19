@@ -13,7 +13,7 @@ describe("User attempts to save data", () => {
     });
     cy.route({
       method: "POST",
-      url: "http://localhost:3000/api/v1/auth/performance_data",
+      url: "http://localhost:3000/api/v1/performance_data",
       response: {},
       headers: {
         uid: "exampleX@example.com"

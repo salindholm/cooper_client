@@ -21,7 +21,6 @@ class App extends Component {
 
 
   onLogin = async e => {
-    debugger 
    e.preventDefault();
    const response = await authenticate(
      e.target.email.value,

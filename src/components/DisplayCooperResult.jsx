@@ -29,7 +29,8 @@ const DisplayCooperResult = ({
             >
               Save Entry
             </button>
-          ) : (
+          ) :  
+           ( 
             <p id="response-message">Your entry was saved</p>
           )}
         </>

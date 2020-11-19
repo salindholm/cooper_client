@@ -21,7 +21,7 @@ describe("User can log in", () => {
       cy.get("#password").type("password");
       cy.get('button').contains('Submit').click()
     }); 
-    cy.get("p#login-success").should("contain", "Hi", "#email");
+    cy.get("p#login-success").should("contain", "Hi user@mail.com");
   });
 
   it("with invalid credentials", () => {
