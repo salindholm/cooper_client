@@ -8,11 +8,11 @@ describe("User authenticates", () => {
   it("successfully with credentials", () => {
     cy.get("#login").click();
     cy.get("#login-form").within(() => {
-      cy.get("#email").type("example@mail.com");
+      cy.get("#email").type("exampleX@example.com");
       cy.get("#password").type("password");
       cy.get('button').contains('Submit').click()
     }); 
-    cy.get("#message").should("contain", "Hi user@mail.com");
+    cy.get("p#login-success").should("contain", "Hi ");
   });
 
   it("unsuccessfully with invalid credentials", () => {
@@ -22,6 +22,6 @@ describe("User authenticates", () => {
       cy.get("#password").type("wrongpassword");
       cy.get('button').contains('Submit').click()
     });
-    cy.get("#message").should("contain", "Invalid login credentials. Please try again.");
+    cy.get("p#login-error").should("contain", "Invalid login credentials. Please try again.");
   });
 });
