@@ -12,7 +12,7 @@ describe("User authenticates", () => {
       cy.get("#password").type("password");
       cy.get('button').contains('Submit').click()
     }); 
-    cy.get("p#login-success").should("contain", "Hi ");
+    cy.get("p#login-success").should("contain", "Hi", "#email");
   });
 
   it("unsuccessfully with invalid credentials", () => {
