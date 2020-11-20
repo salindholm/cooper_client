@@ -20,8 +20,6 @@ const InputFields = ({ onChangeHandler }) => {
         <option value="female">Female</option>
         <option value="male">Male</option>
       </select>
-
-      
     </Form>
   )
 };
