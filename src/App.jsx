@@ -4,7 +4,7 @@ import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
 import { authenticate } from './modules/auth';
-import { Button, Container, Icon } from "semantic-ui-react";
+import { Button, Container, Segment, Icon, Header } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -46,15 +46,16 @@ class App extends Component {
         break;
       case !renderLoginForm && !authenticated:
         renderLogin = (
-          <>
+          <Segment basic textAlign='center'>
+            <Header as='h4'>Log In To Save</Header>
           <Button animated='fade'
           id="login"
           onClick={() => this.setState({ renderLoginForm: true })}>
             <Button.Content visible>Login </Button.Content>
-            <Button.Content hidden><Icon name='arrow right'/></Button.Content>
+            <Button.Content hidden><Icon name='sign in'/></Button.Content>
           </Button>
           <p id="login-error">{message}</p>
-         </>
+         </Segment>
        );
       break;
     case authenticated:
@@ -68,13 +69,13 @@ class App extends Component {
               updateIndex={this.state.updateIndex}
               indexUpdated={() => this.setState({ updateIndex: false })}
             />
-            <button onClick={() => this.setState({ renderIndex: false })}>Hide past entries</button>
+            <Button color='red' onClick={() => this.setState({ renderIndex: false })}>Hide Past Entries</Button>
           </>
         ) 
         
       } else {
         performanceDataIndex = (
-          <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
+          <Button secondary id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show Past Entries</Button>
         )
       }
     }

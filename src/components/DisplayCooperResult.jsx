@@ -1,7 +1,7 @@
 import React from 'react';
 import cooperCalculator from "../modules/cooperCalculator";
 import { saveData } from "../modules/performanceData";
-import { Message , Container } from 'semantic-ui-react'
+import { Message , Button, Icon, Container } from 'semantic-ui-react'
 
 const DisplayCooperResult = ({
   distance,
@@ -21,20 +21,18 @@ const DisplayCooperResult = ({
         <Container>
           <Message 
             id="cooper-message"
-            icon=''
           > 
-            <Message.Header>Your Results</Message.Header>
-              <Message.Item>{`${age} year old ${gender} running ${distance} meters.`}</Message.Item>
-              <Message.Item>{`Result: ${result}`}</Message.Item>
+            <Message.Header><Icon name='flag checkered'/>Your Results</Message.Header>
+              <Message.Item >{`${age} year old ${gender} running ${distance} meters.`}</Message.Item>
+              <Message.Item >{`Result: ${result}`}</Message.Item>
           </Message>
-          <p id="cooper-result">Result: {result}</p>
           {authenticated && !entrySaved ? (
-            <button
+            <Button primary
             id="save-result"
             onClick={() => saveData(result, entryHandler)}
             >
               Save Entry
-            </button>
+            </Button>
           ) :  
            ( 
             <p id="response-message">Your entry was saved</p>
