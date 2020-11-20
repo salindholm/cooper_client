@@ -29,7 +29,7 @@ const DisplayCooperResult = ({
           {authenticated && !entrySaved ? (
             <Button primary
             id="save-result"
-            onClick={() => saveData(result, entryHandler)}
+            onClick={() => saveData(result, age, distance, entryHandler)}
             >
               Save Entry
             </Button>
