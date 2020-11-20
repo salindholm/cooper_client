@@ -3,7 +3,8 @@ import DisplayCooperResult from "./components/DisplayCooperResult";
 import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
-import { authenticate } from './modules/auth'
+import { authenticate } from './modules/auth';
+import { Button, Container, Icon } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -46,12 +47,12 @@ class App extends Component {
       case !renderLoginForm && !authenticated:
         renderLogin = (
           <>
-          <button
+          <Button animated='fade'
           id="login"
-          onClick={() => this.setState({ renderLoginForm: true })}
-        >
-            Login
-          </button>
+          onClick={() => this.setState({ renderLoginForm: true })}>
+            <Button.Content visible>Login </Button.Content>
+            <Button.Content hidden><Icon name='arrow right'/></Button.Content>
+          </Button>
           <p id="login-error">{message}</p>
          </>
        );
@@ -79,7 +80,7 @@ class App extends Component {
     }
 
     return (
-      <>
+      <Container>
       <InputFields onChangeHandler={this.onChangeHandler} />
       {renderLogin}
       <DisplayCooperResult
@@ -91,7 +92,7 @@ class App extends Component {
         entryHandler={() => this.setState( { entrySaved: true, updateIndex: true })}
         />
         {performanceDataIndex}
-      </>
+      </Container>
     );
   }
   
