@@ -1,6 +1,7 @@
 import React from 'react';
 import cooperCalculator from "../modules/cooperCalculator";
 import { saveData } from "../modules/performanceData";
+import { Message , Container } from 'semantic-ui-react'
 
 const DisplayCooperResult = ({
   distance,
@@ -17,10 +18,15 @@ const DisplayCooperResult = ({
   return (
     <>
       {propsPassed && (
-        <>
-          <p id="cooper-message">
-            {age} year old {gender} running {distance} meters.
-          </p>
+        <Container>
+          <Message 
+            id="cooper-message"
+            icon=''
+          > 
+            <Message.Header>Your Results</Message.Header>
+              <Message.Item>{`${age} year old ${gender} running ${distance} meters.`}</Message.Item>
+              <Message.Item>{`Result: ${result}`}</Message.Item>
+          </Message>
           <p id="cooper-result">Result: {result}</p>
           {authenticated && !entrySaved ? (
             <button
@@ -33,7 +39,7 @@ const DisplayCooperResult = ({
            ( 
             <p id="response-message">Your entry was saved</p>
           )}
-        </>
+        </Container>
       )}
     </>
   );

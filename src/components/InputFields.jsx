@@ -24,4 +24,4 @@ const InputFields = ({ onChangeHandler }) => {
   )
 };
 
-export default InputFields;
+export default InputFields; //
