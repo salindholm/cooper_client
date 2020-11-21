@@ -35,7 +35,12 @@ const DisplayCooperResult = ({
             </Button>
           ) :  
            ( 
-            <p id="response-message">Your entry was saved</p>
+            <Message icon id="response-message">
+              <Icon name='check circle outline' />
+              <Message.Content>
+                Your entry was saved!
+              </Message.Content>  
+            </Message>
           )}
         </Container>
       )}

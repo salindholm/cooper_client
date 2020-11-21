@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { getData } from "../modules/performanceData";
-import { Bar } from 'react-chartjs-2';
+import { getData, saveData } from "../modules/performanceData";
+import { Doughnut} from 'react-chartjs-2';
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -30,7 +30,7 @@ class DisplayPerformanceData extends Component {
     let labels = [];
     let age = [];
     
-    if (this.state.performanceData !== null) { 
+    if (this.state.performanceData != null) { 
       this.state.performanceData.forEach((entry) => {
         distances.push(entry.data.distance)
         labels.push(entry.data.message)
@@ -51,14 +51,25 @@ class DisplayPerformanceData extends Component {
 
     const data = {
       labels: age,
-      datasets: [{labels: 'My previous results', data: distances}],
+      datasets: [{
+        label: 'My previous results', 
+        data: distances,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)'
+        ],
+        
+      }],
     };
 
     graph = (
-      <Bar data={data} />
+      <Doughnut data={data} />
     )
 
     return (
+      
       <div id="index">
         {graph}
       </div>

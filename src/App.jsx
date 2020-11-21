@@ -4,7 +4,7 @@ import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
 import { authenticate } from './modules/auth';
-import { Button, Container, Segment, Icon, Header } from "semantic-ui-react";
+import { Button, Container, Segment, Icon, Header, Divider } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -60,7 +60,11 @@ class App extends Component {
       break;
     case authenticated:
       renderLogin = (
-        <p id="login-success">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+        <Segment basic textAlign='center'>
+          <Divider horizontal id="login-success">
+            Welcome {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </Divider>
+        </Segment>
       );
       if (this.state.renderIndex) {
         performanceDataIndex = (
@@ -75,7 +79,7 @@ class App extends Component {
         
       } else {
         performanceDataIndex = (
-          <Button secondary id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show Past Entries</Button>
+          <Button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show Past Entries</Button>
         )
       }
     }
