@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getData } from "../modules/performanceData";
+import { getData, saveData } from "../modules/performanceData";
+import { Doughnut} from 'react-chartjs-2';
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -24,21 +25,41 @@ class DisplayPerformanceData extends Component {
   }
 
   render () {
-    let dataIndex;
+    let graph;
+    let distances = [];
+    let labels = [];
+    let age = [];
     
-    if (this.state.performanceData !== null) {
-      dataIndex = (
-        <div>
-          {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message}</div>
-          })}
-        </div>
-      )
+    if (this.state.performanceData != null) { 
+      this.state.performanceData.forEach((entry) => {
+        distances.push(entry.data.distance)
+        labels.push(entry.data.message)
+        age.push(entry.data.age)
+      }); 
+      
     }
+
+    const data = {
+      labels: age,
+      datasets: [{
+        label: 'My previous results', 
+        data: distances,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)'
+        ],
+      }],
+    };
+
+    graph = (
+      <Doughnut data={data} />
+    )
 
     return (
       <div id="index">
-        {dataIndex}
+        {graph}
       </div>
     )
   }
