@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Header, Divider, Message } from 'semantic-ui-react';
+import { Container, Header, Divider } from 'semantic-ui-react';
 import "../styling/aboutStyle.css"
 
 const About = () => {

@@ -82,6 +82,8 @@ class App extends Component {
           <Button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show Past Entries</Button>
         )
       }
+      break;
+      default: 
     }
 
     return (
