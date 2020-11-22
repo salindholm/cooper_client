@@ -3,7 +3,8 @@ import DisplayCooperResult from "./components/DisplayCooperResult";
 import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
-import { authenticate } from './modules/auth'
+import { authenticate } from './modules/auth';
+import { Button, Container, Segment, Icon, Header, Divider } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -38,47 +39,53 @@ class App extends Component {
   render() {
     const { renderLoginForm, authenticated, message } = this.state;
     let renderLogin;
+    let performanceDataIndex;
     switch(true) {
       case renderLoginForm && !authenticated:
         renderLogin = <LoginForm submitFormHandler={this.onLogin} />;
         break;
       case !renderLoginForm && !authenticated:
         renderLogin = (
-          <>
-          <button
+          <Segment basic textAlign='center'>
+            <Header as='h4'>Log In To Save</Header>
+          <Button animated='fade'
           id="login"
-          onClick={() => this.setState({ renderLoginForm: true })}
-        >
-            Login
-          </button>
+          onClick={() => this.setState({ renderLoginForm: true })}>
+            <Button.Content visible>Login </Button.Content>
+            <Button.Content hidden><Icon name='sign in'/></Button.Content>
+          </Button>
           <p id="login-error">{message}</p>
-         </>
+         </Segment>
        );
       break;
     case authenticated:
       renderLogin = (
-        <p id="login-success">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+        <Segment basic textAlign='center'>
+          <Divider horizontal id="login-success">
+            Welcome {JSON.parse(sessionStorage.getItem("credentials")).uid}
+          </Divider>
+        </Segment>
       );
       if (this.state.renderIndex) {
-       performanceDataIndex = (
-        <>
-          <DisplayPerformanceData
-          updateIndex={this.state.updateIndex}
-          indexUpdated={() => this.setState({ updateIndex: false })}
-         />
-         <button onClick={() => this.setState({ renderIndex: false })}>Hide Past Entries</button>
-        </>
-      )
-    } else {
-      performanceDataIndex = (
-        <button id="show-index" onClick={() => this.setState({ renderIndex: true})}
-        >Show Past Entries</button>
-      )
+        performanceDataIndex = (
+          <>
+            <DisplayPerformanceData
+              updateIndex={this.state.updateIndex}
+              indexUpdated={() => this.setState({ updateIndex: false })}
+            />
+            <Button color='red' onClick={() => this.setState({ renderIndex: false })}>Hide Past Entries</Button>
+          </>
+        ) 
+        
+      } else {
+        performanceDataIndex = (
+          <Button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show Past Entries</Button>
+        )
       }
     }
 
     return (
-      <>
+      <Container>
       <InputFields onChangeHandler={this.onChangeHandler} />
       {renderLogin}
       <DisplayCooperResult
@@ -90,7 +97,7 @@ class App extends Component {
         entryHandler={() => this.setState( { entrySaved: true, updateIndex: true })}
         />
         {performanceDataIndex}
-      </>
+      </Container>
     );
   }
   

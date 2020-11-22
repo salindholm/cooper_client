@@ -1,0 +1,54 @@
+#age-label {
+  padding-right: 20px;
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#distance-label {
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#select-gender {
+  padding-right: 20%;
+  padding-top: 20px;
+  padding-left: 0px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#select-gender-form {
+  padding-top: 20px;
+}
+#gender {
+  margin-top: 2%;
+  margin-bottom: 30px;
+  margin-left: 35%;
+  width: 30%;
+  padding: 5px 5px 5px 10px;
+  font-size: 16px;
+  border: 3px solid rgb(13, 13, 14);
+  height: 34px;
+  -webkit-appearance: alternate-reverse;
+  -moz-appearance: none;
+  appearance: none; 
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-variant: small-caps;
+  font-weight: bolder;
+}
