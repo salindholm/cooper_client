@@ -9,14 +9,14 @@ const InputFields = ({ onChangeHandler }) => {
       <Form>
         <Form.Group >
           <label id="age-label">Age:</label>
-          <input onChange={onChangeHandler} name="age" id="age"></input>
+            <input onChange={onChangeHandler} name="age" id="age"></input>
           <label id="distance-label">Distance:</label>
-          <input
-          onChange={onChangeHandler}
-          name="distance"
-          id="distance"
-          > 
-          </input>
+            <input
+            onChange={onChangeHandler}
+            name="distance"
+            id="distance"
+            > 
+            </input>
         </Form.Group>
         <form id="select-gender-form">
           <label id="select-gender">
