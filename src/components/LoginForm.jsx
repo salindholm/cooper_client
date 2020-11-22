@@ -17,8 +17,8 @@ const LoginForm = ({ submitFormHandler }) => {
                 <input name="password" type="password" id="password"></input>
               </Form.Field>
               <Button  id="submit">
-                <Button.Content >Submit</Button.Content>
-                {/* <Button.Content hidden><Icon name='checkmark'/></Button.Content> */}
+                <Button.Content visible >Submit</Button.Content>
+                <Button.Content hidden><Icon name='checkmark'/></Button.Content>
                </Button>
             </Form>
           </Grid.Column>
