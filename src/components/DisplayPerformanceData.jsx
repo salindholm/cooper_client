@@ -36,16 +36,6 @@ class DisplayPerformanceData extends Component {
         labels.push(entry.data.message)
         age.push(entry.data.age)
       }); 
-        // <div>
-        //   {this.state.performanceData.map(item => {
-        //     return (
-        //       <div key={item.id}>
-        //         <p>{item.data.message}</p>
-        //         <p>{item.data.age}</p>
-        //         <p>{item.data.distance}</p>
-        //       </div>)
-        //   })}
-        // </div>
       
     }
 
@@ -59,8 +49,7 @@ class DisplayPerformanceData extends Component {
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)'
-        ],
-        
+        ], 
       }],
     };
 
@@ -69,7 +58,6 @@ class DisplayPerformanceData extends Component {
     )
 
     return (
-      
       <div id="index">
         {graph}
       </div>

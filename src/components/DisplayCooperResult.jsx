@@ -26,13 +26,13 @@ const DisplayCooperResult = ({
               <Message.Item >{`${age} year old ${gender} running ${distance} meters.`}</Message.Item>
               <Message.Item >{`Result: ${result}`}</Message.Item>
           </Message>
-          {authenticated && !entrySaved ? (
-            <Button primary
-            id="save-result"
-            onClick={() => saveData(result, age, distance, entryHandler)}
-            >
+            {authenticated && !entrySaved ? (
+              <Button primary
+                id="save-result"
+                onClick={() => saveData(result, age, distance, entryHandler)}
+              >
               Save Entry
-            </Button>
+              </Button>
           ) :  
            ( 
             <Message icon id="response-message">

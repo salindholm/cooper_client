@@ -19,13 +19,13 @@ const InputFields = ({ onChangeHandler }) => {
           </input>
         </Form.Group>
         <form id="select-gender-form">
-        <label id="select-gender">
-          Select Gender:
-        <select onChange={onChangeHandler} name="gender" id="gender" placeholder="Select Gender...">
-          <option value="female">Female</option>
-          <option value="male">Male</option>
-        </select>
-        </label>
+          <label id="select-gender">
+            Select Gender:
+            <select onChange={onChangeHandler} name="gender" id="gender" placeholder="Select Gender...">
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </label>
        </form>
       </Form>
       <Divider horizontal>Or</Divider>
