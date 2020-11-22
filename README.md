@@ -32,6 +32,8 @@ On top of the packages from the bootstrap we are also using:
 ## Acknowledgements:
 - Learning materials from craft academy
 - Our teammates
+- [Semantic UI Documentation](https://react.semantic-ui.com/)
+- [Chartjs Documentation](https://github.com/reactchartjs/react-chartjs-2)
 
 ## Improvement plans
 - More user management functions
