@@ -3,7 +3,7 @@ import DisplayCooperResult from "./components/DisplayCooperResult";
 import DisplayPerformanceData from './components/DisplayPerformanceData';
 import InputFields from './components/InputFields';
 import LoginForm from "./components/LoginForm";
-import { authenticate } from './modules/auth';
+import { authenticate } from "./modules/auth";
 import { Button, Container, Segment, Icon, Header, Divider } from "semantic-ui-react";
 
 class App extends Component {
