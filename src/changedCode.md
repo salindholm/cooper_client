@@ -1,1 +1,0 @@
-DisplayCooperResult ln 30: <p id="cooper-result">Result: {result}</p>
