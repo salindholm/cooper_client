@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import "semantic-ui-css/semantic.min.css";
+import { BrowserRouter } from 'react-router-dom';
 
 let apiUrl;
 if (process.env.NODE_ENV === "production") {
@@ -15,9 +16,9 @@ if (process.env.NODE_ENV === "production") {
 axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
