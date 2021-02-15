@@ -1,39 +1,37 @@
-## The Cooper Challenge
-This is the Client of the full stack application we have created. Our application is built to get and save the users cooper results.
+# The Cooper Challenge
 
-## Links:
-Deployment link: [The Cooper Test](whssl-cooper-challenge.netlify.app) \
-Github API: [GitHub Repository](https://github.com/sealfury/cooper_api)
+## Description
+This is the Client of the full stack application we have created to get and save the users cooper results.
 
-## User Stories:
-```
-As a user
-In order to check how fit I am
-I want to be able to check my cooper results
-```
-```
-As a user
-In order to track my previous results
-I want to be able to save them in a database
-```
-## Tested with:
-- Cypress for acceptance test
-- Jest with Enzyme for component testing
+## The code
+- [Deployment app(Netlify)](whssl-cooper-challenge.netlify.app)
+- [Github](https://github.com/salindholm/cooper_challenge)
+- [API](https://github.com/salindholm/cooper_api)
 
-## Dependencies:
-To run locally you will need to install the packages in the package.json using a package manager for JavaScript.\
-On top of the packages from the bootstrap we are also using:
+## User Stories
+```
+As a user,
+In order to check how fit I am,
+I want to be able to check my cooper results.
+```
+```
+As a user,
+In order to track my previous results,
+I want to be able to save them in a database.
+```
+
+## Dependencies
 - Cypress
 - Enzyme
-- Semantic-ui-react
-- Chartjs
+- Semantic-ui-react/Semantic-ui-css
+- Chart.js
 - React
+- React-router-dom
 
-## Acknowledgements:
-- Learning materials from craft academy
-- Our teammates
+## Acknowledgements
+- Course material from [Craft Academy](https://www.craftacademy.se/english/)
 - [Semantic UI Documentation](https://react.semantic-ui.com/)
-- [Chartjs Documentation](https://github.com/reactchartjs/react-chartjs-2)
+- [Chart.js Documentation](https://github.com/reactchartjs/react-chartjs-2)
 
 ## Improvement plans
 - More user management functions
@@ -46,4 +44,4 @@ On top of the packages from the bootstrap we are also using:
     - Add local storage for better performance (no internet connection)
 
 ## License
-This app is open source software licensed as MIT.
+MIT License
